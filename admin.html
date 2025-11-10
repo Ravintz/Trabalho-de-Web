@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard Admin - Imobiliária</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="admin-page">
+
+    <header>
+        <h1 class="logo">Dashboard Administrativo</h1>
+        <nav>
+            <button id="btn-logout">Sair (Logout)</button>
+        </nav>
+    </header>
+
+    <main class="admin-container">
+        <section id="crud-manager">
+            <h2>Gerenciar Imóveis</h2>
+            <form id="crud-form">
+                <input type="hidden" id="imovel-id">
+                
+                <div class="form-group span-2">
+                    <label for="imovel-titulo">Título do Anúncio</label>
+                    <input type="text" id="imovel-titulo" required>
+                </div>
+                <div class="form-group span-2">
+                    <label for="imovel-imagem">URL da Imagem</label>
+                    <input type="text" id="imovel-imagem" placeholder="https://exemplo.com/imagem.jpg" required>
+                </div>
+                <div class="form-group">
+                    <label for="imovel-preco">Preço (R$)</label>
+                    <input type="number" id="imovel-preco" required>
+                </div>
+                <div class="form-group">
+                    <label for="imovel-status">Finalidade</label>
+                    <select id="imovel-status" required>
+                        <option value="Venda">Venda</option>
+                        <option value="Locacao">Locação</option>
+                        <option value="Lancamento">Lançamento</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="imovel-tipo">Tipo</label>
+                    <select id="imovel-tipo" required>
+                        <option value="Apartamento">Apartamento</option>
+                        <option value="Casa">Casa</option>
+                        <option value="Sobrado">Sobrado</option>
+                        <option value="Terreno">Terreno</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="imovel-cidade">Cidade</label>
+                    <input type="text" id="imovel-cidade" value="Curitiba" required>
+                </div>
+                 <div class="form-group">
+                    <label for="imovel-bairro">Bairro</label>
+                    <input type="text" id="imovel-bairro" required>
+                </div>
+                <div class="form-group span-2">
+                    <label for="imovel-descricao">Descrição Detalhada</label>
+                    <textarea id="imovel-descricao" rows="4"></textarea>
+                </div>
+                <div class="form-group span-2">
+                    <button type="submit">Salvar Imóvel</button>
+                    <button type="button" id="btn-cancelar" class="btn-secondary">Cancelar Edição</button>
+                </div>
+            </form>
+        </section>
+
+        <section id="report-section">
+            <h2>Relatório de Imóveis Cadastrados</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Título</th>
+                        <th>Tipo</th>
+                        <th>Preço</th>
+                        <th>Status</th>
+                        <th>Ações</th>
+                    </tr>
+                </thead>
+                <tbody id="report-table-body">
+                    </tbody>
+            </table>
+        </section>
+    </main>
+
+    <script src="js/app.js"></script>
+</body>
+</html>
